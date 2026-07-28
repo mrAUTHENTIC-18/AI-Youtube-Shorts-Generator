@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  ai-shorts:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: ai-youtube-shorts
+
+    volumes:
+      - .:/app
+      - ./output:/app/output
+      - ./downloads:/app/downloads
+      - ./cache:/app/cache
+
+    env_file:
+      - .env
+
+    stdin_open: true
+    tty: true
+
+    command: tail -f /dev/null
