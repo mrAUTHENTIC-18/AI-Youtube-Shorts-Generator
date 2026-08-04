@@ -21,7 +21,7 @@ def _run_local(
     download_format: str,
     language: Optional[str],
 ) -> Dict:
-    from .local.clipper import crop_highlights_local
+    from .local.clipper_ffmpeg import crop_highlights_ffmpeg as crop_highlights_local
     from .local.downloader import download_youtube_local
     from .local.llm import call_local_llm
     from .local.transcriber import transcribe_local

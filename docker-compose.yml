@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   ai-shorts:
     build:
@@ -7,6 +5,8 @@ services:
       dockerfile: Dockerfile
 
     container_name: ai-youtube-shorts
+
+    working_dir: /app
 
     volumes:
       - .:/app
@@ -19,5 +19,3 @@ services:
 
     stdin_open: true
     tty: true
-
-    command: tail -f /dev/null
